@@ -88,6 +88,49 @@ int homem_mais_calmo(int vet[], int tam){
     }
     return pos;
 }
+void mais_homem_ou_mulher(int vet[], int tam){
+    int contHomem {}, contMulher {};
+    for(int i = 0; i < tam; i++){
+        if(vet[i] > 0){
+            contHomem += 1;
+        }else{
+            contMulher += 1;
+        }
+    }
+    if(contHomem == contMulher){
+        cout << "empate" << endl;
+    }else if(contHomem > contMulher){
+        cout << "homem" << endl;
+    }else{
+        cout << "mulher" << endl;
+    }
+}
+
+float estresse_medio(int vet[], int tam){
+    float media {}, soma {};
+    for(int i = 0; i < tam; i++){
+        soma += vet[i];
+    }
+    media = soma/tam;
+    return media;
+}
+
+void metade_estressada(int vet[], int tam){
+    int metade = tam/2, primeira {}, segunda {};
+    for(int i = 0; i < metade; i++){
+        primeira += 1;
+    }
+    for(int i = metade; i < tam; i++){
+        segunda += 1;
+    }
+    if(primeira == segunda){
+        cout << "empate" << endl;
+    }else if(primeira > segunda){
+        cout << "primeira" << endl;
+    }else{
+        cout << "segunda" << endl;
+    }
+}
 
 int main (){
 
@@ -131,4 +174,10 @@ int main (){
     */
 
     //cout << "posicao homem mais calmo: " << homem_mais_calmo(v, qt_elemen) << endl;
+
+    //mais_homem_ou_mulher(v, qt_elemen);
+
+    //cout << "estresse medio: " << estresse_medio(v, qt_elemen) << endl;
+
+    //metade_estressada(v, qt_elemen);
 }
